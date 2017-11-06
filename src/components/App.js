@@ -3,6 +3,8 @@ import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 
 import '../styles/App.css';
 
+import basename from '../config';
+
 import BaseLayout from './view/base/BaseLayout.jsx';
 import Trends from './view/middle/Trends.jsx';
 import Comments from './view/middle/Comments.jsx';
@@ -45,7 +47,7 @@ export default class App extends Component {
 
     return (
       <div>
-        <BrowserRouter>
+        <BrowserRouter basename={basename}>
           <BaseLayout>
             <Switch>
               <Route exact path='/' component={Login}/>
